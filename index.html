@@ -16,38 +16,136 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <style>
+        #logo {
+            position: relative;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #252525;
+            text-align: center;
+        }
+
+        #logo .gravy {
+            position: absolute;
+            top: -5px; /* Adjust to position 'Gravy' above */
+            left: 50%;
+            transform: translateX(-50%);
+            color: red; /* Red font color */
+            font-size: 2rem; /* Adjust size as needed */
+            font-weight: lighter;
+        }
+
+        /* Social Media Icon Colors */
+        #social-networks i.fa-facebook {
+            color: #1877F2; /* Facebook Blue */
+        }
+
+        #social-networks i.fa-instagram {
+            color: #E4405F; /* Instagram Pink */
+        }
+
+        #social-networks i.fa-x-twitter {
+            color: #1DA1F2; /* Twitter Blue */
+        }
+
+        #social-networks i.fa-youtube {
+            color: #FF0000; /* YouTube Red */
+        }
+
+        /* Optional: Add hover effects */
+        #social-networks i:hover {
+            opacity: 0.8; /* Slightly dim the icon on hover */
+            transition: opacity 0.3s ease;
+        }
+
+        #circle-cover-bg {
+            background: url("../images/4ced70fd-345f-47a7-a205-20d37da47f1a.jpeg") no-repeat center center / cover;
+            height: 15vw; /* Adjust size as needed */
+            width: 15vw; /* Adjust size as needed */
+            margin: 0 auto; /* Centers the image horizontally */
+            border-radius: 50%; /* Makes the image round */
+            display: block; /* Ensures proper centering */
+            min-width: 100px; /* Ensures it stays small on large screens */
+            min-height: 100px; /* Ensures it stays small on large screens */
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
-    <Header>
+    <header>
         <a href="index.html">
-            <h1 id="logo">Love Gravy Running</h1>
+            <h1 id="logo">
+                Love <span class="gravy">Gravy</span> Running
+            </h1>
         </a>
-        <input type="checkbox" id="nav-toggle" name="nav-toggle">
+        <!-- Burger Menu Toggle -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
         <label for="nav-toggle" class="nav-toggle-label">
-            <i class="fa-solid fa-bars"></i>
+            <span></span>
+            <span></span>
+            <span></span>
         </label>
         <nav>
             <ul id="menu">
-                <li><a href="" class="active">Home</a></li>
-                <li><a href="">Gallery</a></li>
-                <li><a href="">Sign Up</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
             </ul>
         </nav>
-    </Header>
+    </header>
     
     <!-- Main content -->
-    <main>
-        <p>Your go-to blog for all things running, fitness, and healthy living.</p>
-        <p>Join us on our journey to a healthier lifestyle</p>
-        <p>and discover the joy of running - with a side of gravy</p>
-    </main>
+     <main>
+         <section id="hero">
+            <div id="cover-text">
+                <h2>Love running</h2>
+                <h3>Dublin Docklands & Phoenix Park</h3>
+            </div>
+        </section>
+        <section id="reasons">
+            <h2>Why Love Running With Us?</h2>
+            <div id="benefits">    
+                    <div id="benefits-physical">
+                        <div>
+                            <h3>Feel healthy <i class="fa-solid fa-heart-pulse"></i></h3>
+                            <hr>
+                            <p>Since it improves aerobic fitness, running is a great way to help improve your cardiovascular
+                                health. Plus, it burns calories and can build strength.</p>
+                        </div>
+                        <div>
+                            <h3>Feel strong <i class="fa-solid fa-dumbbell"></i></h3>
+                            <hr>
+                            <p>Running strengthens your heart by pumping blood more effectively through your body.</p>
+                        </div>
+                    </div>
+                    <div id="benefits-mental">
+                        <div>
+                            <h3>Feel free <i class="fa-brands fa-fly"></i></h3>
+                            <hr>
+                            <p>Physical exercise, running included, is known to release endorphins in the brain. Endorphins
+                                make you more energetic, more awake and, yes, happier.</p>
+                        </div>
+                        <div>
+                            <h3>Get social <i class="fa-solid fa-globe"></i></h3>
+                            <hr>
+                            <p>When we run with others, we can run farther and faster more easily. Social running can pull
+                                you out of a running funk or low mood, and inspire you to try new events.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="benefits-image">
+                    <div id="circle-cover-bg"></div>
+                </div>
+            </section>      
+        </main>
+
     <!-- Footer -->
     <footer>
     <ul id="social-networks">
             <li><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="https://www.X.com/" target="_blank" rel="noopener" aria-label="Visit our home on X (opens in a new tab)"><i class="fa-brands fa-x-twitter"></i></a></li>
             <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Visit our Instagram channel (opens in a new tab)"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.X.com/" target="_blank" rel="noopener" aria-label="Visit our home on X (opens in a new tab)"><i class="fa-brands fa-x-twitter"></i></a></li>
             <li><a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Visit our YouTube page (opens in a new tab)"><i class="fa-brands fa-youtube"></i></a></li>
     </ul>
     </footer>

@@ -1,17 +1,15 @@
 /* Google Fonts import */
-
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Macondo&family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Macondo&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 /* Asterisk wildcard selector too override default styles added by the brower */
 
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-/* General Sytles */
+/* General Styles */
 body {
     min-height: 100vh;
     display: flex;
@@ -21,17 +19,24 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-/* Header */
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #252525;
+}
+
+/* General Header Styles */
 header {
-    background-color: #ffffff;
-    padding: 0 1rem;
-    position: fixed;
-    z-index: 99;
-    width: 100%;
-    box-shadow: 0 2px 2px #3a3a3a;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 2px #3a3a3a;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
 }
 
 header a {
@@ -39,58 +44,131 @@ header a {
     color: inherit;
 }
 
-h1 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #252525;
-}
-
-#menu {
-    font-size: 110%;  
-    letter-spacing: 4px;
-    list-style-type: none;
-}
-
-#menu > li {
-    margin-bottom: 1em;
-}
-
-.active {
-    border-bottom: 1px solid #3a3a3a;
-}
-
-/* navbar style with dropdown toggle */
-
-nav {
-    position: absolute;
-    background-color: #ffffff;
-    width: 100%;
-    left: 0;
-    padding: 0 1rem;
-    box-shadow: 0 2px 2px #3a3a3a;
-    display: none;
-    top: 100%;
-}
-
-/* Nav toggle */
-#nav-toggle:checked~nav {
-    display: block;
-}
-
-#nav-toggle {
+/* Burger Menu Styles */
+.nav-toggle {
     display: none;
 }
 
 .nav-toggle-label {
-    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-toggle-label span {
+    width: 25px;
+    height: 3px;
+    background-color: #252525;
+    border-radius: 2px;
+}
+
+/* Navigation Menu */
+nav {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 2px #3a3a3a;
+}
+
+#menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu > li {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: #252525;
+    font-size: 1.2rem;
+}
+
+/* Show menu when toggle is checked */
+.nav-toggle:checked + .nav-toggle-label + nav {
+    display: flex;
 }
 
 /* Main content */
 main {
-    background-color: lightblue;
     flex: 1 0 auto;
-    margin-top: 47px;
+    margin-top: 79px; /* Combine both margin-top values */
+}
+
+/* Hero section */
+#hero {
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    background: url("../images/184ae31e-9863-4e59-99b5-7332c927bf4a.jpeg") no-repeat center center;
+    background-size: cover; /* Ensures the image covers the entire area without distortion */
+    background-attachment: fixed; /* Keeps the image fixed during scrolling */
+}
+
+#cover-text {
+    background-color: rgba(241, 109, 107, .7);
+    font-size: 130%;
+    position: absolute;
+    bottom: 30px;
+    width: 80%;
+    min-height: 200px;
+    padding-top: 40px;
+    padding-left: 10px;
+}
+
+#cover-text > h2, #cover-text > h3 {
+    color: #ffffff;
+}
+
+/* Reasons section */
+#reasons {
+    width: 90%;
+    margin: 20px auto;
+}
+
+#reasons h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 280%;
+}
+
+#benefits-physical > div,
+#benefits-mental > div {
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+#benefits p {
+    padding: 0 20px;
+}
+
+#benefits hr {
+    border-top: 1px solid #3a3a3a;
+    margin: 5px 0;
+}
+
+#circle-cover-bg {
+    background: url("../images/4ced70fd-345f-47a7-a205-20d37da47f1a.jpeg") no-repeat center center / cover;
+    height: 15vw; /* Adjust size as needed */
+    width: 15vw; /* Adjust size as needed */
+    margin: 0 auto; /* Centers the image horizontally */
+    border-radius: 50%; /* Makes the image round */
+    display: block; /* Ensures proper centering */
+    min-width: 100px; /* Ensures it stays small on large screens */
+    min-height: 100px; /* Ensures it stays small on large screens */
+}
+
+#benefits-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Footer */
@@ -99,59 +177,47 @@ main {
     padding: 20px 0;
     display: flex;
     justify-content: space-evenly;
-    list-style: none;
+    list-style-type: none;
 }
 
 #social-networks i {
     font-size: 160%;
     padding: 5%;
-    color: 
+    color: #252525;
 }
 
 /*media queries: tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
  /* header */
-nav {
-        display: block;
-        position: relative;
+    nav {
+        display: flex;
+        position: static;
+        flex-direction: row;
         box-shadow: none;
         width: fit-content;
         padding-right: 1rem;
    }
+
+    #menu li {
+        padding: 0 1rem;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
 }
 
-/* Large screens (992px and up) */
-@media screen and (min-width: 992px) {
-    #menu a:hover {
-        border-bottom: 1px solid #3a3a3a;
-    }
-}    
-    
 #menu {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    nav {
-        position: static;
-        display: block;
-        box-shadow: none;
-        width: fit-content;
-        padding-right: 1rem;
     }
 
 menu > li {
-    padding-left: 1rem;
+        padding-left: 1rem;
 }
 
-.nav-toggle-label {
-    display: none;
-}
-
-logo {
+#logo {
     font-size: 200%;
-    list-height: 75px;
+    line-height: 75px;
     margin: 0 0.5rem;
 }
 
@@ -159,4 +225,104 @@ logo {
 
 main {
     margin-top: 79px;
+}
+
+/* Hero */
+#cover-text {
+    width: 300px;
+    right: 50px;
+}
+
+/* Reasons section */
+#benefits-physical,
+#benefits-mental {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#benefits-physical > div,
+#benefits-mental > div {
+    width: 50%;
+}
+
+#benefits-mental > div {
+    text-align: end;
+    align-self: flex-end;
+}
+
+/* Large screens (992px and up) */
+@media screen and (min-width: 992px) {
+    #menu a:hover {
+        border-bottom: 1px solid #3a3a3a;
+    }
+}
+
+/* Logo styles */
+#logo {
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #252525;
+    text-align: center;
+}
+
+#logo .gravy {
+    position: absolute;
+    top: -5px; /* Adjust to position 'Gravy' above */
+    left: 50%;
+    transform: translateX(-50%);
+    color: red; /* Red font color */
+    font-size: 2rem; /* Adjust size as needed */
+    font-weight: lighter;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-toggle-label {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+    }
+
+    #circle-cover-bg {
+        height: 25vw;
+        width: 25vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /* reasons section */
+    #benefits {
+        display: flex;
+        flex-direction: row;
+    }
+   
+    #benefits > div {
+        flex: 1;
+    }
+
+    #benefits-image {
+        order: 0;
+    }
+
+    #benefits-mental {
+        order: 1;
+    }
+
+    #benefits-mental > div {
+        align-self: flex-start;
+    }
+
+    #benefits-physical {
+        align-self: flex-end;
+    }
+
+    #circle-cover-bg {
+        height: 20vw;
+        width: 20vw;
+    }
 }
