@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for search engines -->
+    <meta name="description"
+        content="Love Running. Club for runners in Dublin, Ireland. Urban running, trail running. Dublin docklands and Phoenix Park">
+    <meta name="keywords" content="love running, run, running club, runners, Ireland, Dublin, sport, exercise">
+    <!-- Title -->
+    <title>Love Gravy Running</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        #logo {
+            position: relative;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #252525;
+            text-align: center;
+        }
+
+        #logo .gravy {
+            position: absolute;
+            top: -5px; /* Adjust to position 'Gravy' above */
+            left: 50%;
+            transform: translateX(-50%);
+            color: red; /* Red font color */
+            font-size: 2rem; /* Adjust size as needed */
+            font-weight: lighter;
+        }
+
+        /* Social Media Icon Colors */
+        #social-networks i.fa-facebook {
+            color: #1877F2; /* Facebook Blue */
+        }
+
+        #social-networks i.fa-instagram {
+            color: #E4405F; /* Instagram Pink */
+        }
+
+        #social-networks i.fa-x-twitter {
+            color: #1DA1F2; /* Twitter Blue */
+        }
+
+        #social-networks i.fa-youtube {
+            color: #FF0000; /* YouTube Red */
+        }
+
+        /* Optional: Add hover effects */
+        #social-networks i:hover {
+            opacity: 0.8; /* Slightly dim the icon on hover */
+            transition: opacity 0.3s ease;
+        }
+
+        #circle-cover-bg {
+            background: url("../images/4ced70fd-345f-47a7-a205-20d37da47f1a.jpeg") no-repeat center center / cover;
+            height: 15vw; /* Adjust size as needed */
+            width: 15vw; /* Adjust size as needed */
+            margin: 0 auto; /* Centers the image horizontally */
+            border-radius: 50%; /* Makes the image round */
+            display: block; /* Ensures proper centering */
+            min-width: 100px; /* Ensures it stays small on large screens */
+            min-height: 100px; /* Ensures it stays small on large screens */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html">
+            <h1 id="logo">
+                Love <span class="gravy">Gravy</span> Running
+            </h1>
+        </a>
+        <!-- Burger Menu Toggle -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <section id="gallery">
+            <div id="photos">
+
+            </div>
+            <div class="gallery-grid">
+                <img src="assets/images/4b308011-904e-4f31-81de-b0559f4a0f78.jpeg" alt="Finish Line">
+                <img src="assets/images/37db3c03-76d7-44b8-b1ca-e7a90b3a1018.jpeg" alt="Two runners">
+                <img src="assets/images/ChatGPT Image Apr 15, 2025, 03_32_21 PM.png" alt="Group run">
+                <img src="assets/images/Emotionatfinishline.jpg" alt="Finish Line">
+                <img src="assets/images/Marathongravy.png" alt="Marathongravy">
+            </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <ul id="social-networks">
+            <li>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Facebook page (opens in a new tab)">
+                    <i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li>
+                <a href="https://www.twitter.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Twitter page (opens in a new tab)">
+                    <i class="fa-brands fa-twitter-square"></i></a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our YouTube page (opens in a new tab)">
+                    <i class="fa-brands fa-youtube-square"></i></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Instagram page (opens in a new tab)">
+                    <i class="fa-brands fa-instagram"></i></a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Font Awesome kit -->
+    <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
