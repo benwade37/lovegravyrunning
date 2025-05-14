@@ -17,23 +17,134 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
+        /* Header styles */
+        header {
+            background-color: #ffffff;
+            padding: 0 1rem;
+            position: fixed;
+            z-index: 99;
+            width: 100%;
+            box-shadow: 0 2px 2px #3a3a3a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo container */
         #logo {
             position: relative;
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #252525;
+            font-size: 2rem;
             text-align: center;
         }
 
-        #logo .gravy {
+        /* Base text (Love Running) */
+        .base-text {
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Gravy text */
+        .gravy-text {
             position: absolute;
-            top: -5px; /* Adjust to position 'Gravy' above */
+            top: 0; /* Adjust to position over "Love Running" */
             left: 50%;
-            transform: translateX(-50%);
-            color: red; /* Red font color */
-            font-size: 2rem; /* Adjust size as needed */
-            font-weight: lighter;
+            transform: translate(-50%, -20%); /* Center horizontally and adjust vertically */
+            font-size: 2.5rem; /* Slightly larger than the base text */
+            color: #8B4513; /* Brown color */
+            font-weight: bold;
+            z-index: 2;
+            text-shadow: 2px 2px 0 #5A2E0A, -2px -2px 0 #5A2E0A, 2px -2px 0 #5A2E0A, -2px 2px 0 #5A2E0A; /* Splatter effect */
+        }
+
+        /* Optional: Add a splatter background */
+        .gravy-text::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 150%;
+            background: url('assets/images/splatter.png') no-repeat center center;
+            background-size: contain;
+            z-index: -1; /* Place behind the text */
+            opacity: 0.8; /* Slight transparency for the splatter */
+        }
+
+        /* Navigation styles */
+        nav {
+            position: relative;
+        }
+
+        #menu {
+            display: flex;
+            gap: 1rem;
+            list-style-type: none;
+        }
+
+        #menu > li > a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        /* Burger menu styles for mobile */
+        .nav-toggle-label {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                background-color: #ffffff;
+                width: 100%;
+                left: 0;
+                top: 100%;
+                box-shadow: 0 2px 2px #3a3a3a;
+                padding: 1rem;
+            }
+
+            #menu {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            #nav-toggle:checked ~ nav {
+                display: block;
+            }
+
+            .nav-toggle-label {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 24px;
+                width: 30px;
+                cursor: pointer;
+            }
+
+            .nav-toggle-label span {
+                display: block;
+                height: 3px;
+                background-color: #3a3a3a;
+                border-radius: 2px;
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            nav {
+                display: block;
+            }
+
+            .nav-toggle-label {
+                display: none;
+            }
         }
 
         /* Social Media Icon Colors */
@@ -76,7 +187,8 @@
     <header>
         <a href="index.html">
             <h1 id="logo">
-                Love <span class="gravy">Gravy</span> Running
+                <span class="base-text">Love Running</span>
+                <span class="gravy-text">Gravy</span>
             </h1>
         </a>
         <!-- Burger Menu Toggle -->

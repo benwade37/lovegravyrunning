@@ -17,24 +17,106 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
+
     <style>
+        /* Header styles */
+        header {
+            background-color: #ffffff;
+            padding: 0 1rem;
+            position: fixed;
+            z-index: 99;
+            width: 100%;
+            box-shadow: 0 2px 2px #3a3a3a;
+            display: flex;
+            justify-content: space-between; /* Space between logo and menu */
+            align-items: center;
+        }
+
+        /* Logo styles */
         #logo {
-            position: relative;
+            font-size: 1.5rem;
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #252525;
-            text-align: center;
         }
 
         #logo .gravy {
-            position: absolute;
-            top: -5px; /* Adjust to position 'Gravy' above */
-            left: 50%;
-            transform: translateX(-50%);
-            color: red; /* Red font color */
-            font-size: 2rem; /* Adjust size as needed */
+            color: red;
+            font-size: 1.2rem;
             font-weight: lighter;
+        }
+
+        /* Navigation styles */
+        nav {
+            position: relative;
+        }
+
+        #menu {
+            display: flex;
+            gap: 1rem; /* Add spacing between menu items */
+            list-style-type: none;
+        }
+
+        #menu > li > a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        /* Burger menu styles for mobile */
+        .nav-toggle-label {
+            display: none; /* Hide the burger menu by default */
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Hide the full menu on smaller screens */
+            nav {
+                display: none;
+                position: absolute;
+                background-color: #ffffff;
+                width: 100%;
+                left: 0;
+                top: 100%;
+                box-shadow: 0 2px 2px #3a3a3a;
+                padding: 1rem;
+            }
+
+            #menu {
+                flex-direction: column; /* Stack menu items vertically */
+                gap: 0.5rem;
+            }
+
+            #nav-toggle:checked ~ nav {
+                display: block; /* Show the menu when the burger menu is toggled */
+            }
+
+            .nav-toggle-label {
+                display: flex; /* Show the burger menu on smaller screens */
+                flex-direction: column;
+                justify-content: space-between;
+                height: 24px;
+                width: 30px;
+                cursor: pointer;
+            }
+
+            .nav-toggle-label span {
+                display: block;
+                height: 3px;
+                background-color: #3a3a3a;
+                border-radius: 2px;
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            nav {
+                display: block; /* Show the full menu on larger screens */
+            }
+
+            .nav-toggle-label {
+                display: none; /* Hide the burger menu */
+            }
         }
 
         /* Social Media Icon Colors */
@@ -70,6 +152,32 @@
             min-width: 100px; /* Ensures it stays small on large screens */
             min-height: 100px; /* Ensures it stays small on large screens */
         }
+
+        #photos {
+            display: grid; /* Use CSS Grid for layout */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+            gap: 10px; /* Spacing between images */
+        }
+
+        #photos img {
+            width: 100%; /* Make images fill their grid cells */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px; /* Optional: Add rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow effect */
+        }
+
+        /* Media query for larger screens */
+        @media screen and (min-width: 768px) {
+            #photos {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Larger columns for bigger screens */
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            #photos {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Even larger columns for desktops */
+            }
+        }
     </style>
 </head>
 <body>
@@ -90,7 +198,7 @@
         <nav>
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="signup.html">Sign Up</a></li>
             </ul>
         </nav>
@@ -100,15 +208,19 @@
     <main>
         <section id="gallery">
             <div id="photos">
-
-            </div>
-            <div class="gallery-grid">
-                <img src="assets/images/4b308011-904e-4f31-81de-b0559f4a0f78.jpeg" alt="Finish Line">
-                <img src="assets/images/37db3c03-76d7-44b8-b1ca-e7a90b3a1018.jpeg" alt="Two runners">
-                <img src="assets/images/ChatGPT Image Apr 15, 2025, 03_32_21 PM.png" alt="Group run">
-                <img src="assets/images/Emotionatfinishline.jpg" alt="Finish Line">
-                <img src="assets/images/Marathongravy.png" alt="Marathongravy">
-            </div>
+                <section id="gallery">
+                    <div id="photos">
+                        <img src="assets/images/4b308011-904e-4f31-81de-b0559f4a0f78.jpeg" alt="Finish Line">
+                        <img src="assets/images/37db3c03-76d7-44b8-b1ca-e7a90b3a1018.jpeg" alt="Two runners">
+                        <img src="assets/images/ChatGPT Image Apr 15, 2025, 03_32_21 PM.png" alt="Group run">
+                        <img src="assets/images/Emotionatfinishline.jpg" alt="Finish Line">
+                        <img src="assets/images/Marathongravy.png" alt="Marathongravy">
+                        <img src="assets/images/Victory.jpeg" alt="A victorious runner">
+                        <img src="assets/images/bundle.jpg" alt="A group of runners">
+                        <img src="assets/images/glory.jpg" alt="A happy runner">
+                        <img src="assets/images/gravyshoe.png" alt="A running shoe and a jug of gravy">
+                    </div>
+                </section>
     </main>
 
     <!-- Footer -->
@@ -140,5 +252,4 @@
     <!-- Font Awesome kit -->
     <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
 </body>
-
 </html>

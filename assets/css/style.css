@@ -203,13 +203,22 @@ main {
 }
 
 /* Gallery page */
-#photos img {
-    width: 100%;
-    line-height: 1em;
+#photos {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 10px; /* Spacing between images */
 }
 
-#photos {
-    line-height: 0;
+#photos img {
+    width: 100%; /* Make images fill their grid cells */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow effect */
+}
+
+#photos img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image */
+    transition: transform 0.3s ease;
 }
 
 /* Form */
@@ -263,16 +272,6 @@ main {
     color: #fafafa;
 }
 
-/* Gallery page */
-#photos img {
-    width: 100%;
-    line-height: 1em;
-}
-
-#photos {
-    line-height: 0;
-}
-
 /* Footer */
 #social-networks {
     text-align: center;
@@ -297,7 +296,17 @@ main {
 }
 
 /* Media query: tablets and larger (768px and up) */
+
+@media screen and (max-width: 768px) {
+    #photos {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller columns for smaller screens */
+    }
+}
+
 @media screen and (min-width: 768px) {
+    #photos {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Larger columns for bigger screens */
+    }
 
     /* Header */
     nav {
@@ -358,7 +367,7 @@ main {
 
     /* Gallery */
     #photos {
-        column-count: 3;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Larger columns for bigger screens */
     }
 }
 
@@ -374,7 +383,11 @@ main {
     }
 }
 
-@media screen and (min-width: 1200px) {    
+@media screen and (min-width: 1200px) {
+    #photos {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Even larger columns for desktops */
+    }
+
     /* Reasons section */
     #benefits {
         flex-direction: row;
