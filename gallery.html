@@ -34,17 +34,34 @@
 
         /* Logo styles */
         #logo {
-            font-size: 1.5rem;
+            position: relative;
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #252525;
+            font-size: 2rem;
+            text-align: center;
         }
 
-        #logo .gravy {
-            color: red;
-            font-size: 1.2rem;
-            font-weight: lighter;
+        /* Base text (Love Running) */
+        .base-text {
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Gravy text */
+        .gravy-text {
+            position: absolute;
+            top: 0; /* Adjust to position over "Love Running" */
+            left: 50%;
+            transform: translate(-50%, -20%); /* Center horizontally and adjust vertically */
+            font-size: 1.5rem; /* Slightly larger than the base text */
+            color: #9d5522; /* Brown color */
+            font-style: italic; /* Makes the text italic */
+            font-weight: 300; /* Lighter font weight */
+            z-index: 2;
+            text-shadow: 2px 2px 0 #452205, -2px -2px 0 #5A2E0A, 2px -2px 0 #5A2E0A, -2px 2px 0 #5A2E0A; /* Splatter effect */
         }
 
         /* Navigation styles */
@@ -71,9 +88,8 @@
         }
 
         @media screen and (max-width: 768px) {
-            /* Hide the full menu on smaller screens */
             nav {
-                display: none;
+                display: none; /* Hide the full menu on smaller screens */
                 position: absolute;
                 background-color: #ffffff;
                 width: 100%;
@@ -185,7 +201,8 @@
     <header>
         <a href="index.html">
             <h1 id="logo">
-                Love <span class="gravy">Gravy</span> Running
+                <span class="base-text">Love Running</span>
+                <span class="gravy-text">Gravy</span>
             </h1>
         </a>
         <!-- Burger Menu Toggle -->
@@ -207,8 +224,6 @@
     <!-- Main content -->
     <main>
         <section id="gallery">
-            <div id="photos">
-                <section id="gallery">
                     <div id="photos">
                         <img src="assets/images/4b308011-904e-4f31-81de-b0559f4a0f78.jpeg" alt="Finish Line">
                         <img src="assets/images/37db3c03-76d7-44b8-b1ca-e7a90b3a1018.jpeg" alt="Two runners">
@@ -219,6 +234,7 @@
                         <img src="assets/images/bundle.jpg" alt="A group of runners">
                         <img src="assets/images/glory.jpg" alt="A happy runner">
                         <img src="assets/images/gravyshoe.png" alt="A running shoe and a jug of gravy">
+                        <img src="assets/images/Lonelygravy.png" alt="A lonely runner">
                     </div>
                 </section>
     </main>
