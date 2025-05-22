@@ -230,7 +230,9 @@ main {
 
 /* Form */
 #signup {
-    background-image: url("../images/signup-image.webp");
+    background-color: red;
+    height: 100vh; /* Ensure the section has height */
+    background-image: url("../images/37db3c03-76d7-44b8-b1ca-e7a90b3a1018.jpeg");
     background-size: cover;
     background-position: 75%;
     padding: 20px 10% 0 10%;
@@ -404,93 +406,8 @@ footer ul#social-networks li a i {
 
     /* Gallery */
     #photos {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Larger columns for bigger screens */
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1.5fr)); /* Larger columns for bigger screens */
     }
-}
-
-/* Main content */
-main {
-    /* Enlarge main element to push footer down*/
-    flex: 1 0 auto;
-    /* Add margin at the top to prevent content from being covered by the header */
-    margin-top: 47px;
-    /* Enable flex properties for child elements */
-    display: flex;
-    flex-direction: column;
-}
-
-/* Form */
-#signup {
-    background-image: url("../images/signup-image.webp");
-    background-size: cover;
-    background-position: 75%;
-    padding: 20px 10% 0 10%;
-    flex-grow: 1;
-}
-
-#signup-form {
-    color: #ffffff;
-    background-color: rgba(60, 60, 60, 0.6);
-    padding: 30px;
-}
-
-#signup-form>h2 {
-    color: #fafafa;
-    margin-bottom: 20px;
-}
-
-.text-input {
-    background: transparent;
-    color: #fafafa;
-    width: 100%;
-    height: 25px;
-    margin: 5px 0 20px 0;
-    border: 1px solid #fafafa;
-    border-radius: 2px;
-    padding: 0 5px;
-}
-
-.radio-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.join-button {
-    margin-top: 20px;
-    border-radius: 2px;
-    padding: 15px 32px;
-    font-size: 100%;
-    background-color: #454b1b;
-    color: #fafafa;
-}
-
-/* Media query: tablets and larger (768px and up) */
-@media screen and (min-width: 768px) {
-    ...
-
-    /* Form */
-    #signup {
-        background-position: center;
-        position: relative;
-    }
-
-    #signup-form {
-        max-width: 400px;
-        position: absolute;
-        left: 10%;
-        top: 150px;
-    }
-
-    .text-input:hover {
-        border-color: #f16c6b;
-    }
-
-    .join-button:hover {
-        background-color: #fafafa;
-        color: #454b1b;
-    }
-}
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
@@ -506,7 +423,7 @@ main {
 
 @media screen and (min-width: 1200px) {
     #photos {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Even larger columns for desktops */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 2fr)); /* Even larger columns for desktops */
     }
 
     /* Reasons section */
@@ -537,4 +454,3 @@ main {
     #benefits-physical > div {
         align-self: flex-end;
     }
-}
