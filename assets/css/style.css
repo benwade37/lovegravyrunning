@@ -158,22 +158,36 @@ main {
     margin: 5px 0;
 }
 
-#circle-cover-bg {
-    background: url("../assets/images/4b308011-904e-4f31-81de-b0559f4a0f78.jpeg") no-repeat center center / cover;
-    height: 90vw;
-    width: 90vw;
-    margin-bottom: 20px;
-    border-radius: 50%; /* Makes the image circular */
-    max-width: 300px;
-    max-height: 300px;
-    display: block;
-}
-
 #benefits-image {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px 0;
+    width: 180px; /* Set a fixed width */
+    height: 180px; /* Set a fixed height */
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Ensures the image stays within the circular container */
+}
+
+#benefits-image img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the image covers the circular area */
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+    #benefits-image {
+        width: 300px; /* Increase width for medium screens */
+        height: 300px; /* Increase height for medium screens */
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #benefits-image {
+        width: 400px; /* Increase width for large screens */
+        height: 400px; /* Increase height for large screens */
+    }
 }
 
 /* Meetup Times section */
@@ -205,13 +219,13 @@ main {
 /* Gallery container */
 #photos {
     display: grid; /* Use CSS Grid for layout */
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
-    grid-auto-rows: 1fr; /* Ensure rows adjust dynamically */
-    gap: 0; /* Remove spacing between grid items */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive columns */
+    grid-auto-rows: minmax(100px, 1fr); /* Ensure rows adjust dynamically */
+    gap: 0; /* Remove spacing between images */
     width: 100vw; /* Full width of the viewport */
     height: 100vh; /* Full height of the viewport */
-    margin: 0; /* Remove any default margin */
-    padding: 0; /* Remove any default padding */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
 /* Images */
@@ -221,11 +235,13 @@ main {
     object-fit: cover; /* Ensure images maintain aspect ratio and fill the cell */
     margin: 0; /* Remove any default margin */
     padding: 0; /* Remove any default padding */
-    border: none; /* Remove any default border */
+    border: none; /* Explicitly remove borders */
+    box-shadow: none; /* Remove any shadow effects */
 }
 
-#gallery {
-    margin-bottom: 100px; /* Add space between the gallery and footer */
+#photos img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image */
+    transition: transform 0.3s ease;
 }
 
 /* Form */
@@ -264,13 +280,11 @@ main {
     padding: 0 5px;
 }
 
-
 .radio-buttons {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-
 
 .join-button {
     margin-top: 20px;
@@ -344,7 +358,8 @@ footer ul#social-networks li a i {
 
 @media screen and (min-width: 768px) {
     #photos {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Larger columns for bigger screens */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Larger columns for bigger screens */
+        grid-auto-rows: minmax(150px, 1fr); /* Adjust row height */
     }
 
     /* Header */
@@ -404,10 +419,11 @@ footer ul#social-networks li a i {
         align-self: flex-end;
     }
 
-    /* Gallery */
-    #photos {
-        grid-template-columns: repeat(auto-fit, minmax(50px, 1.5fr)); /* Larger columns for bigger screens */
-    }
+        /* Gallery */
+        #photos {
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1.5fr)); /* Larger columns for bigger screens */
+        }
+    } /* Close 768px media query */
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
@@ -419,15 +435,17 @@ footer ul#social-networks li a i {
     #photos {
         column-count: 4;
     }
-}
+} /* Close 992px media query */
 
 @media screen and (min-width: 1200px) {
     #photos {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 2fr)); /* Even larger columns for desktops */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Even larger columns for desktops */
+        grid-auto-rows: minmax(200px, 1fr); /* Adjust row height */
     }
 
     /* Reasons section */
     #benefits {
+        display: flex;
         flex-direction: row;
     }
 
@@ -436,15 +454,11 @@ footer ul#social-networks li a i {
     }
 
     #benefits-image {
-        order: 1; /* Place the image in the middle */
+        order: 0; /* Place the image in the middle */
     }
 
     #benefits-mental {
-        order: 2;
-    }
-
-    #benefits-physical {
-        order: 0;
+        order: 1;
     }
 
     #benefits-mental > div {
@@ -454,3 +468,4 @@ footer ul#social-networks li a i {
     #benefits-physical > div {
         align-self: flex-end;
     }
+}
