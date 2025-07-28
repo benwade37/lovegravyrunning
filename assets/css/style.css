@@ -242,6 +242,7 @@ main {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Keep it fullscreen */
+    background-color: antiquewhite;
 }
 #gallery-photos img:nth-child(5n) {
     grid-column: span 2;
