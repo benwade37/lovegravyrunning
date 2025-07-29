@@ -190,6 +190,29 @@ main {
     object-fit: cover; /* Ensures the image covers the circular area */
 }
 
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+    #cover-text {
+        top: 5%; /* Adjust position for smaller screens */
+        right: 5%; /* Keep some padding from the right edge */
+        width: 80%; /* Increase width to fit more text */
+        padding: 15px; /* Reduce padding */
+        font-size: 100%; /* Reduce font size for better readability */
+        text-align: center; /* Center-align text for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #cover-text {
+        top: 5%; /* Adjust position for very small screens */
+        right: 5%; /* Keep some padding from the right edge */
+        width: 90%; /* Use almost full width */
+        padding: 10px; /* Further reduce padding */
+        font-size: 90%; /* Reduce font size for very small screens */
+        text-align: center; /* Center-align text */
+    }
+}
+
 /* Media query for larger screens */
 @media screen and (min-width: 768px) {
     #benefits-image {
