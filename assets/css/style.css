@@ -99,11 +99,20 @@ main {
 
 /* Hero section */
 #hero {
-    position: relative; /* Ensure child elements like #cover-text are positioned relative to this container */
-    height: 80vh; /* Adjust height to fit the viewport */
-    width: 100%; /* Full width of the viewport */
-    background: url("../images/Gravelead.png") no-repeat center center/cover; /* Hero image */
-    overflow: hidden; /* Prevent content from spilling outside the hero area */
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+#hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire section */
 }
 
 #cover-text {
@@ -181,6 +190,7 @@ main {
     width: 180px; /* Set a fixed width */
     height: 180px; /* Set a fixed height */
     border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the circular area */
     overflow: hidden; /* Ensures the image stays within the circular container */
 }
 
@@ -189,6 +199,8 @@ main {
     height: 100%; /* Maintain aspect ratio */
     object-fit: cover; /* Ensures the image covers the circular area */
 }
+
+
 
 /* Responsive styles for smaller screens */
 @media screen and (max-width: 768px) {
@@ -218,6 +230,27 @@ main {
     #benefits-image {
         width: 300px; /* Increase width for medium screens */
         height: 300px; /* Increase height for medium screens */
+    }
+
+    #gallery-photos {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusted for larger screens */
+    }
+
+    /* Header */
+    nav {
+        display: block;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+
+    #menu {
+        display: flex;
+    }
+
+    #menu > li {
+        /* Additional styles if needed */
     }
 }
 
@@ -407,19 +440,7 @@ footer ul#social-networks li a i {
 
 /* Media query: tablets and larger (768px and up) */
 
-@media screen and (max-width: 768px) {
-    #photos {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller columns for smaller screens */
-    }
-}
-
-@media screen and (min-width: 768px) {
-    #photos {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Larger columns for bigger screens */
-        grid-auto-rows: minmax(150px, 1fr); /* Adjust row height */
-    }
-
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 769px) {
         #gallery-photos {
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller columns for smaller screens */
         }
@@ -486,7 +507,7 @@ footer ul#social-networks li a i {
     #gallery-photos {
             grid-template-columns: repeat(auto-fit, minmax(50px, 1.5fr)); /* Larger columns for bigger screens */
         }
-    } /* Close 768px media query */
+     /* Close 768px media query */
 
     @media screen and (max-width: 768px) {
         #gallery-photos {
