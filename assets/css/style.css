@@ -528,23 +528,41 @@ footer ul#social-networks li a i {
 } /* Close 992px media query */
 
 @media screen and (min-width: 1200px) {
+
+@media screen and (min-width: 1200px) {
     #photos {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Even larger columns for desktops */
-        grid-auto-rows: minmax(200px, 1fr); /* Adjust row height */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-rows: minmax(200px, 1fr);
     }
 
     /* Reasons section */
     #benefits {
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
 
-    #benefits > div {
+    /* Only the text columns should flex */
+    #benefits-physical,
+    #benefits-mental {
         flex: 1;
     }
 
+    /* Keep the image a fixed circle */
     #benefits-image {
-        order: 0; /* Place the image in the middle */
+        flex: 0 0 auto;
+        width: 400px;
+        height: 400px;
+        margin: 0 20px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    #benefits-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
     #benefits-mental {
